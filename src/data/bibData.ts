@@ -171,7 +171,7 @@ const BIB_DATA: Record<Lang, LangData> = {
     partners: ["Aldagi", "Imedi L", "TBC Insurance", "ARDI", "Irao", "Unison", "GPI", "Alfa"],
     clientsTitle: "კომპანიები რომლებსაც სჯერათ ჩვენი",
     clients: ["Bene Group", "Bene Comport", "Bene Exclusive", "Kairos", "Dagi", "Albioni", "Wizer"],
-    ctaSectionTitle: "შეთავაზების მოთხოვნა",
+    ctaSectionTitle: "ლაშას მამა გარდაიცვალა",
     ctaSectionSubtitle: "დაგვიკავშირდით — ჩვენ მიგიყვანთ სწორ გადაწყვეტამდე",
     blogTitle: "ბლოგი / სიახლეები",
     blogSubtitle: "გაეცანით სასარგებლო ინფორმაციას დაზღვევის, რისკების მართვისა და სადაზღვევო გადაწყვეტილებების შესახებ.",
