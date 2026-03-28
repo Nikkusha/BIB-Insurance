@@ -39,7 +39,7 @@ export default function DetailPage() {
                   <img
                     src={`/product-${slug.replace("-insurance","")}.png`}
                     alt={page.title}
-                    className="w-full h-full object-contain p-4"
+                    className="w-full h-full object-cover"
                   />
                 ) : (
                   <div className="text-center p-8">
