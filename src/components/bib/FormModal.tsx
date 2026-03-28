@@ -52,7 +52,7 @@ export default function FormModal({ open, onClose }: FormModalProps) {
           ×
         </button>
         <h2 className="text-lg font-semibold text-foreground mb-4">{t.fillForm}</h2>
-        <ContactForm />
+        <ContactForm showProductSelect={true} />
       </div>
     </div>
   );
