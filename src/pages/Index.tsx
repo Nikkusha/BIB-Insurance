@@ -96,68 +96,64 @@ export default function Index() {
       </section>
 
       {/* ===== PRODUCTS FULL-WIDTH SLIDER ===== */}
-      <section
-        className="relative overflow-hidden"
-        style={{
-          backgroundImage: "url('/hero.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-primary/80" />
-        <div className="relative z-10 py-16 md:py-24">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-primary-foreground mb-10">{d.productsTitle}</h2>
-
-          <div className="relative">
-            <div className="overflow-hidden">
+      {(() => {
+        const productImages: Record<string, string> = {
+          "auto-insurance": "/product-auto.png",
+          "property-insurance": "/product-property.png",
+          "travel-insurance": "/product-auto.png",
+          "health-insurance": "/product-health.png",
+          "cargo-insurance": "/product-cargo.png",
+        };
+        return (
+          <section className="relative overflow-hidden" style={{ minHeight: "480px" }}>
+            {d.productAccordion.map((p, i) => (
               <div
-                className="flex transition-transform duration-500"
-                style={{ transform: `translateX(-${activeProduct * 100}%)` }}
+                key={i}
+                className={`absolute inset-0 flex items-center transition-opacity duration-700 ${i === activeProduct ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+                style={{
+                  backgroundImage: `url('${productImages[p.slug] || "/hero.png"}')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
-                {d.productAccordion.map((p, i) => (
-                  <div key={i} className="w-full flex-shrink-0">
-                    <div className="container-bib py-4">
-                      <div className="max-w-3xl mx-auto">
-                        <span className="text-primary-foreground/30 text-5xl font-bold block mb-2">{i + 1}</span>
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary-foreground">{p.title}</h3>
-                        <p className="text-primary-foreground/80 mb-6 text-base leading-relaxed">{p.desc}</p>
-                        <ul className="grid grid-cols-2 gap-3 mb-8">
-                          {p.bullets.map((b, bi) => (
-                            <li key={bi} className="flex items-center gap-2 text-sm text-primary-foreground/80">
-                              <span className="h-1.5 w-1.5 rounded-full bg-primary-foreground/50 shrink-0" />
-                              {b}
-                            </li>
-                          ))}
-                        </ul>
-                        <Link
-                          to={`/detail/${p.slug}?lang=${lang}`}
-                          className="inline-flex items-center gap-2 rounded-md bg-background text-primary px-6 py-3 font-medium hover:bg-muted transition-colors"
-                        >
-                          {lang === "ge" ? "გაიგეთ მეტი" : "Learn more"} <ArrowRight className="h-4 w-4" />
-                        </Link>
-                      </div>
-                    </div>
+                <div className="absolute inset-0 bg-primary/75" />
+                <div className="container-bib relative z-10 py-16 md:py-24 w-full">
+                  <div className="max-w-3xl">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary-foreground">{p.title}</h3>
+                    <p className="text-primary-foreground/80 mb-6 text-base leading-relaxed">{p.desc}</p>
+                    <ul className="grid grid-cols-2 gap-3 mb-8">
+                      {p.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-center gap-2 text-sm text-primary-foreground/80">
+                          <span className="h-1.5 w-1.5 rounded-full bg-primary-foreground/50 shrink-0" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      to={`/detail/${p.slug}?lang=${lang}`}
+                      className="inline-flex items-center gap-2 rounded-md bg-background text-primary px-6 py-3 font-medium hover:bg-muted transition-colors"
+                    >
+                      {lang === "ge" ? "გაიგეთ მეტი" : "Learn more"} <ArrowRight className="h-4 w-4" />
+                    </Link>
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
-
+            ))}
             <button
               onClick={() => moveProduct(-1)}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 rounded-full bg-background/20 backdrop-blur p-2 text-primary-foreground hover:bg-background/40 transition-colors"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 rounded-full bg-background/20 backdrop-blur p-2 text-primary-foreground hover:bg-background/40 transition-colors"
               aria-label="Previous product"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button
               onClick={() => moveProduct(1)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 rounded-full bg-background/20 backdrop-blur p-2 text-primary-foreground hover:bg-background/40 transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 rounded-full bg-background/20 backdrop-blur p-2 text-primary-foreground hover:bg-background/40 transition-colors"
               aria-label="Next product"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
-
-            <div className="flex justify-center gap-2 mt-8">
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
               {d.productAccordion.map((_, i) => (
                 <button
                   key={i}
@@ -167,18 +163,9 @@ export default function Index() {
                 />
               ))}
             </div>
-
-            <div className="text-center mt-6">
-              <button
-                onClick={() => setModalOpen(true)}
-                className="rounded-md bg-background text-primary px-6 py-3 font-medium hover:bg-muted transition-colors"
-              >
-                {d.productCtaLabel}
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+          </section>
+        );
+      })()}
 
       {/* ===== PARTNERS (right to left) ===== */}
       <div className="bg-background">
