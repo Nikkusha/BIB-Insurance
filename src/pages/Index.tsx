@@ -185,7 +185,7 @@ export default function Index() {
 
       {/* ===== CONTACT FORM SECTION ===== */}
       <section id="contact" className="section-padding bg-primary">
-        <div className="container-bib max-w-lg">
+        <div className="container-bib max-w-md">
           <h2 className="text-xl md:text-2xl font-semibold text-center text-primary-foreground mb-2">{d.ctaSectionTitle}</h2>
           <p className="text-sm text-primary-foreground/70 text-center mb-8">{d.ctaSectionSubtitle}</p>
           <div className="rounded-lg bg-background p-6 md:p-8 shadow-bib-md">
