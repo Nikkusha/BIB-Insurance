@@ -88,7 +88,13 @@ export default function Index() {
                 style={i > 0 ? { borderLeftColor: "#D6C476" } : undefined}
               >
                 <h3 className="font-bold text-foreground mb-2 text-lg">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{s.body}</p>
+                <button
+                  onClick={() => setModalOpen(true)}
+                  className="text-sm font-medium text-primary border border-primary rounded-md px-4 py-1.5 hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  {lang === "ge" ? "დეტალები" : "Details"}
+                </button>
               </div>
             ))}
           </div>
@@ -179,7 +185,7 @@ export default function Index() {
 
       {/* ===== CONTACT FORM SECTION ===== */}
       <section id="contact" className="section-padding bg-primary">
-        <div className="container-bib max-w-2xl">
+        <div className="container-bib max-w-lg">
           <h2 className="text-xl md:text-2xl font-semibold text-center text-primary-foreground mb-2">{d.ctaSectionTitle}</h2>
           <p className="text-sm text-primary-foreground/70 text-center mb-8">{d.ctaSectionSubtitle}</p>
           <div className="rounded-lg bg-background p-6 md:p-8 shadow-bib-md">
