@@ -175,12 +175,12 @@ export default function Index() {
 
       {/* ===== PARTNERS (right to left) ===== */}
       <div className="bg-background">
-        <LogoCarousel title={d.partnersTitle} items={d.partners} direction="left" />
+        <LogoCarousel title={d.partnersTitle} direction="left" />
       </div>
 
       {/* ===== CLIENTS (left to right) ===== */}
       <div className="bg-muted">
-        <LogoCarousel title={d.clientsTitle} items={d.clients} direction="right" />
+        <LogoCarousel title={d.clientsTitle} direction="right" />
       </div>
 
       {/* ===== CONTACT FORM SECTION ===== */}
