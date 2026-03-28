@@ -98,7 +98,7 @@ const BIB_DATA: Record<Lang, LangData> = {
       products: "პროდუქტები",
       blog: "ბლოგი/სიახლეები",
       contact: "კონტაქტი",
-      cta: "შეთავაზების მოთხოვნა",
+      cta: "კარგია კიკიეთი",
       langToggle: "EN",
       home: "მთავარი",
     },
