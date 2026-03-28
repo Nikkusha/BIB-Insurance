@@ -209,7 +209,7 @@ export default function Index() {
           <div className="relative w-full max-w-md mx-4 rounded-lg bg-background p-6 shadow-bib-lg" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setModalOpen(false)} className="absolute top-3 right-3 text-muted-foreground hover:text-foreground text-xl">×</button>
             <h2 className="text-lg font-semibold text-foreground mb-4">{d.formLabels.fillForm}</h2>
-            <ContactForm />
+            <ContactForm showProductSelect />
           </div>
         </div>
       )}
