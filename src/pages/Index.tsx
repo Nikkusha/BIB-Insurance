@@ -106,7 +106,7 @@ export default function Index() {
         const productImages: Record<string, string> = {
           "auto-insurance": "/product-auto.png",
           "property-insurance": "/product-property.png",
-          "travel-insurance": "/product-auto.png",
+          "travel-insurance": "/product-travel.png",
           "health-insurance": "/product-health.png",
           "cargo-insurance": "/product-cargo.png",
         };
@@ -184,8 +184,17 @@ export default function Index() {
       </div>
 
       {/* ===== CONTACT FORM SECTION ===== */}
-      <section id="contact" className="section-padding bg-primary">
-        <div className="container-bib max-w-md">
+      <section
+        id="contact"
+        className="section-padding relative overflow-hidden"
+        style={{
+          backgroundImage: "url('/cta-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-primary/80" />
+        <div className="container-bib max-w-md relative z-10">
           <h2 className="text-xl md:text-2xl font-semibold text-center text-primary-foreground mb-2">{d.ctaSectionTitle}</h2>
           <p className="text-sm text-primary-foreground/70 text-center mb-8">{d.ctaSectionSubtitle}</p>
           <div className="rounded-lg bg-background p-6 md:p-8 shadow-bib-md">

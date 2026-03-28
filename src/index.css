@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,35 +7,37 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 233 43% 14%;
+    --foreground: 225 21% 26%;
     --card: 0 0% 100%;
-    --card-foreground: 233 43% 14%;
+    --card-foreground: 225 21% 26%;
     --popover: 0 0% 100%;
-    --popover-foreground: 233 43% 14%;
-    --primary: 212 70% 33%;
+    --popover-foreground: 225 21% 26%;
+    --primary: 225 21% 26%;
     --primary-foreground: 0 0% 100%;
-    --primary-dark: 212 70% 25%;
-    --secondary: 214 60% 95%;
-    --secondary-foreground: 212 70% 33%;
-    --muted: 220 27% 98%;
-    --muted-foreground: 210 15% 53%;
-    --accent: 214 60% 95%;
-    --accent-foreground: 212 70% 33%;
+    --primary-dark: 225 21% 18%;
+    --secondary: 31 45% 92%;
+    --secondary-foreground: 225 21% 26%;
+    --muted: 40 33% 96%;
+    --muted-foreground: 0 0% 38%;
+    --accent: 49 54% 65%;
+    --accent-foreground: 225 21% 26%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 212 70% 33%;
+    --border: 31 30% 88%;
+    --input: 31 30% 88%;
+    --ring: 225 21% 26%;
     --radius: 0.75rem;
 
-    --brand-blue: 212 70% 33%;
-    --brand-blue-dark: 212 70% 25%;
-    --brand-blue-light: 214 60% 95%;
-    --text-secondary: 210 15% 53%;
-    --bg-light: 220 27% 98%;
-    --shadow-sm: 0 2px 8px hsla(212, 70%, 33%, 0.08);
-    --shadow-md: 0 8px 32px hsla(212, 70%, 33%, 0.12);
-    --shadow-lg: 0 16px 48px hsla(212, 70%, 33%, 0.16);
+    --brand-dark: 225 21% 26%;
+    --brand-gold: 49 54% 65%;
+    --brand-cream: 31 45% 84%;
+    --brand-gray: 0 0% 38%;
+    --brand-blue-light: 31 45% 92%;
+    --text-secondary: 0 0% 38%;
+    --bg-light: 40 33% 96%;
+    --shadow-sm: 0 2px 8px hsla(225, 21%, 26%, 0.08);
+    --shadow-md: 0 8px 32px hsla(225, 21%, 26%, 0.12);
+    --shadow-lg: 0 16px 48px hsla(225, 21%, 26%, 0.16);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -58,6 +60,7 @@
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold text-foreground;
+    font-family: 'Playfair Display', serif;
   }
 }
 
