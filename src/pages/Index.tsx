@@ -49,7 +49,7 @@ export default function Index() {
           backgroundPosition: "center",
         }}
       >
-        <div className="container-bib relative z-10 py-16 md:py-24">
+        <div className="container-bib relative z-10 py-16 md:py-24 w-full">
           <div className="max-w-2xl">
             <h1 className="text-3xl md:text-5xl font-bold mb-4 text-primary leading-tight">
               {d.heroSlides[0].title}
@@ -80,18 +80,18 @@ export default function Index() {
         <div className="container-bib">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-3">{d.servicesTitle}</h2>
           <p className="text-sm text-muted-foreground text-center mb-12 max-w-2xl mx-auto">{d.servicesSubheading}</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
             {d.services.map((s, i) => (
               <div
                 key={i}
-                className={`px-6 py-4 ${i > 0 ? "lg:border-l" : ""}`}
+                className={`px-6 py-4 flex flex-col ${i > 0 ? "lg:border-l" : ""}`}
                 style={i > 0 ? { borderLeftColor: "#D6C476" } : undefined}
               >
                 <h3 className="font-bold text-foreground mb-2 text-lg">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{s.body}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-grow">{s.body}</p>
                 <button
                   onClick={() => setModalOpen(true)}
-                  className="text-sm font-medium text-primary border border-primary rounded-md px-4 py-1.5 hover:bg-primary hover:text-primary-foreground transition-colors"
+                  className="self-start text-sm font-medium text-primary border border-primary rounded-md px-4 py-1.5 hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
                   {lang === "ge" ? "დეტალები" : "Details"}
                 </button>
