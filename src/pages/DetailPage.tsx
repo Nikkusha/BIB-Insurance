@@ -34,12 +34,12 @@ export default function DetailPage() {
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
             {/* Left: Sticky visual */}
             <aside className="lg:flex-1 lg:sticky lg:top-24 lg:self-start pt-8 lg:pt-12">
-              <div className="w-full aspect-[4/3] bg-muted rounded-lg overflow-hidden shadow-bib-md flex items-center justify-center">
+              <div className="w-full bg-white flex items-center justify-center">
                 {["auto-insurance","property-insurance","travel-insurance","health-insurance","cargo-insurance"].includes(slug) ? (
                   <img
-                    src={`/product-${slug.replace("-insurance","")}.png`}
+                    src={`/detail-${slug.replace("-insurance","")}.png`}
                     alt={page.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto object-contain"
                   />
                 ) : (
                   <div className="text-center p-8">
