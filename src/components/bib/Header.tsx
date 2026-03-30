@@ -65,19 +65,19 @@ export default function Header() {
   return (
     <>
       <header className="sticky top-0 z-40 bg-background/95 backdrop-blur border-b border-border">
-        <div className="container-bib flex items-center justify-between h-16">
+        <div className="container-bib flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to={`/?lang=${lang}`} className="text-xl font-bold text-primary tracking-tight">
-            BIB
+          <Link to={`/?lang=${lang}`}>
+            <img src="/bib-logo.png" alt="BIB Logo" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
             <DropdownMenu label={d.nav.company} items={d.companyDropdown} id="company" />
             <DropdownMenu label={d.nav.products} items={d.productsDropdown} id="products" />
-            <Link to={`/?lang=${lang}#blog`} className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <a href={`/blog.html?lang=${lang}`} className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               {d.nav.blog}
-            </Link>
+            </a>
             <Link to={`/contact?lang=${lang}`} className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               {d.nav.contact}
             </Link>
@@ -125,9 +125,9 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
-              <Link to={`/?lang=${lang}#blog`} onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-foreground hover:text-primary py-1">
+              <a href={`/blog.html?lang=${lang}`} onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-foreground hover:text-primary py-1">
                 {d.nav.blog}
-              </Link>
+              </a>
               <Link to={`/contact?lang=${lang}`} onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-foreground hover:text-primary py-1">
                 {d.nav.contact}
               </Link>

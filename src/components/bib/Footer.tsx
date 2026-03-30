@@ -15,8 +15,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* About */}
           <div>
-            <Link to={`/?lang=${lang}`} className="text-xl font-bold text-primary-foreground mb-3 inline-block">BIB</Link>
-            <p className="text-sm text-primary-foreground/70 leading-relaxed">{d.footerAbout}</p>
+            <Link to={`/?lang=${lang}`} className="text-[28px] font-bold text-primary-foreground mb-2 inline-block">BIB</Link>
+            <p className="text-sm text-primary-foreground/70 leading-relaxed max-w-[260px]">{d.footerAbout}</p>
           </div>
 
           {/* Quick Links */}
@@ -25,9 +25,15 @@ export default function Footer() {
             <ul className="space-y-2">
               {d.footerQuickLinks.map((link) => (
                 <li key={link.slug}>
-                  <Link to={link.slug === "blog" ? `/?lang=${lang}#blog` : navLink(link.slug)} className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-                    {link.label}
-                  </Link>
+                  {link.slug === "blog" ? (
+                    <a href={`/blog.html?lang=${lang}`} className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link to={navLink(link.slug)} className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

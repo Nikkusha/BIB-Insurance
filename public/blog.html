@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ბლოგი | BIB</title>
+  <meta name="description" content="BIB სადაზღვევო ბლოგი — სასარგებლო ინფორმაცია დაზღვევის, რისკების მართვისა და სადაზღვევო გადაწყვეტილებების შესახებ." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/pages.css" />
+</head>
+<body class="animate-fade-in">
+
+  <!-- HEADER (injected by main.js) -->
+  <div id="header-container"></div>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- Page hero -->
+    <section class="page-hero" id="page-hero">
+      <div class="container-bib">
+        <h1 class="page-hero-title" id="hero-title"></h1>
+        <p class="page-hero-subtitle" id="hero-subtitle"></p>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-bar">
+      <div class="container-bib">
+        <nav class="breadcrumb" aria-label="breadcrumb">
+          <a href="/?lang=ge" id="bc-home"></a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current" id="bc-current"></span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Blog grid -->
+    <section class="blog-list-section">
+      <div class="container-bib">
+        <div class="blog-grid" id="blog-grid"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER (injected by main.js) -->
+  <div id="footer-container"></div>
+
+  <!-- MODAL (injected by main.js) -->
+  <div id="modal-container"></div>
+
+  <!-- Scripts -->
+  <script src="/js/data.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    /* Page-specific render function called by bibInit() */
+    function renderPage(lang) {
+      var d = BIB_DATA[lang];
+
+      /* Update document title + html lang */
+      document.title = (lang === "ge" ? "ბლოგი" : "Blog") + " | BIB";
+      document.documentElement.lang = lang === "ge" ? "ka" : "en";
+
+      /* Hero */
+      document.getElementById("hero-title").textContent    = d.blogTitle;
+      document.getElementById("hero-subtitle").textContent = d.blogSubtitle;
+
+      /* Breadcrumb */
+      var bcHome = document.getElementById("bc-home");
+      bcHome.textContent = d.breadcrumbs.home;
+      bcHome.href = "/?lang=" + lang;
+      document.getElementById("bc-current").textContent = d.breadcrumbs.blog;
+
+      /* Blog grid */
+      var grid = document.getElementById("blog-grid");
+      grid.innerHTML = BIB_BLOG_SLUGS.map(function (slug) {
+        var post = d.pages[slug];
+        if (!post) return "";
+        var ex = excerpt(post.body, 140);
+        var href = "/blog-detail.html?slug=" + slug + "&lang=" + lang;
+        return (
+          '<article class="blog-card">' +
+            '<p class="blog-card-date">' + post.date + "</p>" +
+            '<a href="' + href + '">' +
+              '<h2 class="blog-card-title">' + post.title + "</h2>" +
+            "</a>" +
+            '<p class="blog-card-excerpt">' + ex + "</p>" +
+            '<div class="blog-card-footer">' +
+              '<span class="blog-card-author">' + post.author + "</span>" +
+              '<a href="' + href + '" class="blog-card-readmore">' + d.readMore + "</a>" +
+            "</div>" +
+          "</article>"
+        );
+      }).join("");
+    }
+  </script>
+</body>
+</html>

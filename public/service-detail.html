@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIB Service</title>
+  <meta name="description" content="BIB Insurance Brokerage — service detail" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/pages.css" />
+</head>
+<body class="animate-fade-in">
+
+  <!-- HEADER -->
+  <div id="header-container"></div>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <section class="service-detail-section">
+      <div class="container-bib">
+
+        <!-- Article header — title + shortDesc, like About Us page -->
+        <div class="article-header">
+          <h1 class="article-title" id="service-title"></h1>
+          <p class="article-author" id="service-short-desc"></p>
+        </div>
+
+        <div class="blog-detail-layout">
+
+          <!-- LEFT: Content blocks -->
+          <article>
+
+            <div class="service-block">
+              <p class="service-intro" id="service-intro"></p>
+            </div>
+
+            <div class="service-block">
+              <h2 class="service-block-title" id="service-includes-title"></h2>
+              <ul class="service-what-list" id="service-what-list"></ul>
+            </div>
+
+            <div class="service-block">
+              <h2 class="service-block-title" id="service-how-title"></h2>
+              <ol class="service-how-list" id="service-how-list"></ol>
+            </div>
+
+            <div class="service-block">
+              <h2 class="service-block-title" id="service-why-title"></h2>
+              <div class="service-why-box" id="service-why-text"></div>
+            </div>
+
+          </article>
+
+          <!-- RIGHT: Sidebar — Other services only -->
+          <aside class="sidebar">
+            <div class="sidebar-box">
+              <h3 class="sidebar-box-title" id="other-services-title"></h3>
+              <div id="other-services-list"></div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA banner -->
+    <section class="bottom-cta">
+      <div class="container-bib">
+        <p class="bottom-cta-title" id="bottom-cta-text"></p>
+        <button class="btn-outline-white" id="bottom-cta-btn" onclick="openModal()"></button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer-container"></div>
+
+  <!-- MODAL -->
+  <div id="modal-container"></div>
+
+  <script src="/js/data.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    var _params = new URLSearchParams(window.location.search);
+    var _slug   = _params.get("slug") || "";
+
+    (function () {
+      var urlLang = _params.get("lang");
+      if (urlLang === "ge" || urlLang === "en") {
+        window.__bibLang = urlLang;
+        localStorage.setItem("bib-lang", urlLang);
+      }
+    })();
+
+    function renderPage(lang) {
+      var d       = BIB_DATA[lang];
+      var lbl     = d.serviceLabels;
+      var service = d.services[_slug];
+
+      if (!service) {
+        window.location.href = "/?lang=" + lang;
+        return;
+      }
+
+      document.title = service.title + " | BIB";
+      document.documentElement.lang = lang === "ge" ? "ka" : "en";
+
+      /* Article header */
+      document.getElementById("service-title").textContent      = service.title;
+      document.getElementById("service-short-desc").textContent = service.shortDesc;
+
+      /* Intro */
+      document.getElementById("service-intro").textContent = service.intro;
+
+      /* What */
+      document.getElementById("service-includes-title").textContent = lbl.includesTitle;
+      document.getElementById("service-what-list").innerHTML = service.what.map(function (item) {
+        return (
+          '<li class="service-what-item">' +
+            '<span class="service-bullet" aria-hidden="true"></span>' +
+            "<span>" + item + "</span>" +
+          "</li>"
+        );
+      }).join("");
+
+      /* How */
+      document.getElementById("service-how-title").textContent = lbl.howTitle;
+      document.getElementById("service-how-list").innerHTML = service.how.map(function (item, i) {
+        return (
+          '<li class="service-how-item">' +
+            '<span class="service-step-num" aria-hidden="true">' + (i + 1) + "</span>" +
+            "<span>" + item + "</span>" +
+          "</li>"
+        );
+      }).join("");
+
+      /* Why BIB */
+      document.getElementById("service-why-title").textContent = lbl.whyTitle;
+      document.getElementById("service-why-text").textContent  = service.why;
+
+      /* Other services */
+      document.getElementById("other-services-title").textContent = lbl.otherServicesTitle;
+      var others = BIB_SERVICE_SLUGS.filter(function (s) { return s !== _slug; });
+      document.getElementById("other-services-list").innerHTML = others.map(function (s) {
+        var svc  = d.services[s];
+        var href = "/service-detail.html?slug=" + s + "&lang=" + lang;
+        return (
+          '<div class="other-service-item">' +
+            '<a href="' + href + '">' + svc.title + "</a>" +
+            '<span class="other-service-desc">' + svc.shortDesc + "</span>" +
+          "</div>"
+        );
+      }).join("");
+
+      /* Bottom CTA */
+      document.getElementById("bottom-cta-text").textContent = lbl.bottomCtaText;
+      document.getElementById("bottom-cta-btn").textContent  = lbl.bottomCtaBtn;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIB Blog</title>
+  <meta name="description" content="BIB Insurance Brokerage — blog article" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/pages.css" />
+</head>
+<body class="animate-fade-in">
+
+  <!-- HEADER -->
+  <div id="header-container"></div>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- Article + Sidebar -->
+    <section class="blog-detail-section">
+      <div class="container-bib">
+        <div class="blog-detail-layout">
+
+          <!-- LEFT: Article -->
+          <article>
+            <!-- Article header — date, title, author inline like React DetailPage -->
+            <div class="article-header">
+              <p class="article-date" id="article-date"></p>
+              <h1 class="article-title" id="article-title"></h1>
+              <p class="article-author" id="article-author"></p>
+            </div>
+
+            <div class="article-body" id="article-body"></div>
+            <div class="article-sources" id="article-sources"></div>
+          </article>
+
+          <!-- RIGHT: Sidebar -->
+          <aside class="sidebar">
+
+            <!-- Related posts box -->
+            <div class="sidebar-box">
+              <h3 class="sidebar-box-title" id="related-title"></h3>
+              <div id="related-posts"></div>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA Banner -->
+    <section class="bottom-cta">
+      <div class="container-bib">
+        <p class="bottom-cta-title" id="bottom-cta-text"></p>
+        <button class="btn-outline-white" id="bottom-cta-btn" onclick="openModal()"></button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer-container"></div>
+
+  <!-- MODAL -->
+  <div id="modal-container"></div>
+
+  <!-- Scripts -->
+  <script src="/js/data.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    var _params = new URLSearchParams(window.location.search);
+    var _slug   = _params.get("slug") || "";
+
+    (function () {
+      var urlLang = _params.get("lang");
+      if (urlLang === "ge" || urlLang === "en") {
+        window.__bibLang = urlLang;
+        localStorage.setItem("bib-lang", urlLang);
+      }
+    })();
+
+    function renderPage(lang) {
+      var d    = BIB_DATA[lang];
+      var post = d.pages[_slug];
+
+      if (!post) {
+        window.location.href = "/blog.html?lang=" + lang;
+        return;
+      }
+
+      document.title = post.title + " | BIB";
+      document.documentElement.lang = lang === "ge" ? "ka" : "en";
+
+      /* Article header */
+      document.getElementById("article-date").textContent   = post.date;
+      document.getElementById("article-title").textContent  = post.title;
+      document.getElementById("article-author").textContent = post.author;
+
+      /* Article body */
+      document.getElementById("article-body").innerHTML = post.body
+        .split("\n\n")
+        .map(function (p) { return "<p>" + p.trim() + "</p>"; })
+        .join("");
+
+      /* Sources */
+      var sourcesEl = document.getElementById("article-sources");
+      if (post.sources && post.sources.length) {
+        sourcesEl.innerHTML =
+          '<p class="article-sources-label">' + d.sourcesLabel + "</p>" +
+          post.sources.map(function (s) {
+            return '<p class="article-source-item">— ' + s + "</p>";
+          }).join("");
+      } else {
+        sourcesEl.innerHTML = "";
+      }
+
+      /* Related posts */
+      document.getElementById("related-title").textContent = d.sidebarRelatedTitle;
+      var others = BIB_BLOG_SLUGS.filter(function (s) { return s !== _slug; }).slice(0, 3);
+      document.getElementById("related-posts").innerHTML = others.map(function (s) {
+        var p    = d.pages[s];
+        var href = "/blog-detail.html?slug=" + s + "&lang=" + lang;
+        return (
+          '<div class="related-post">' +
+            '<a href="' + href + '">' + p.title + "</a>" +
+            '<span class="related-post-date">' + p.date + "</span>" +
+          "</div>"
+        );
+      }).join("");
+
+      /* Bottom CTA */
+      document.getElementById("bottom-cta-text").textContent = d.bottomCtaText;
+      document.getElementById("bottom-cta-btn").textContent  = d.bottomCtaBtn;
+    }
+  </script>
+</body>
+</html>

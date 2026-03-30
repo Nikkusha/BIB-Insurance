@@ -8,7 +8,6 @@ export interface HeroSlide {
 export interface ProductAccordionItem {
   title: string;
   desc: string;
-  bullets: string[];
   slug: string;
 }
 
@@ -136,34 +135,29 @@ const BIB_DATA: Record<Lang, LangData> = {
     productsTitle: "ჩვენი პროდუქტები",
     productAccordion: [
       {
-        title: "ავტოდაზღვევა",
-        desc: "იცავს ავტომობილს ფინანსური დანაკარგებისგან ავტოსაგზაო შემთხვევის, დაზიანების ან ქურდობის შემთხვევაში.",
-        bullets: ["ავტოსაგზაო შემთხვევა", "ქურდობა", "ხანძარი", "სტიქიური მოვლენები"],
-        slug: "auto-insurance",
+        title: "ტვირთის დაზღვევა",
+        desc: "დაიცავით ტვირთი ტრანსპორტირებისას დაზიანების, დაკარგვისა და სხვა გაუთვალისწინებელი რისკებისგან.",
+        slug: "cargo-insurance",
+      },
+      {
+        title: "ჯანმრთელობის დაზღვევა",
+        desc: "მიიღეთ ხარისხიანი სამედიცინო მომსახურება და ფინანსური დაცვა ჯანმრთელობის ხარჯებისგან.",
+        slug: "health-insurance",
       },
       {
         title: "ქონების დაზღვევა",
         desc: "იცავს გაუთვალისწინებელი მოვლენებით გამოწვეული ფინანსური ზარალისგან.",
-        bullets: ["შენობა-ნაგებობები", "ოფისები", "საწარმოო ინფრასტრუქტურა", "ფართო რისკი"],
         slug: "property-insurance",
       },
       {
         title: "სამოგზაურო დაზღვევა",
-        desc: "ფინანსური დაცვა მოგზაურობის დროს წარმოქმნილი გაუთვალისწინებელი შემთხვევებისგან.",
-        bullets: ["სამედიცინო ხარჯები", "გადაუდებელი დახმარება", "ბარგის დაკარგვა", "ნებისმიერი ქვეყანა"],
+        desc: "მშვიდად — დაზღვევა ფარავს უცხოეთში წარმოქმნილ სამედიცინო ხარჯებს და სხვა რისკებს.",
         slug: "travel-insurance",
       },
       {
-        title: "ჯანმრთელობის დაზღვევა",
-        desc: "ფინანსური დაცვა სამედიცინო მომსახურების ხარჯებისგან.",
-        bullets: ["ამბულატორიული", "სტაციონარი", "ოპერაციები", "მედიკამენტები"],
-        slug: "health-insurance",
-      },
-      {
-        title: "ტვირთის დაზღვევა",
-        desc: "ფინანსური დაცვა ტვირთის ტრანსპორტირებისას წარმოქმნილი რისკებისგან.",
-        bullets: ["დაზიანება", "დაკარგვა", "სტიქიური მოვლენები", "საერთაშორისო"],
-        slug: "cargo-insurance",
+        title: "ავტოდაზღვევა",
+        desc: "დაიცავით ავტომობილი ავტოსაგზაო შემთხვევების, ქურდობისა და სხვა გაუთვალისწინებელი ზარალისგან.",
+        slug: "auto-insurance",
       },
     ],
     productCtaLabel: "მოითხოვე შეთავაზება",
@@ -420,11 +414,11 @@ const BIB_DATA: Record<Lang, LangData> = {
     ],
     productsTitle: "Our Products",
     productAccordion: [
-      { title: "Auto Insurance", desc: "Protects vehicles from financial losses in case of traffic accidents, damage or theft.", bullets: ["Traffic accidents", "Theft", "Fire", "Natural disasters"], slug: "auto-insurance" },
-      { title: "Property Insurance", desc: "Protects against financial losses caused by unforeseen events.", bullets: ["Buildings", "Offices", "Industrial infrastructure", "Broad risk"], slug: "property-insurance" },
-      { title: "Travel Insurance", desc: "Financial protection from unforeseen events during travel.", bullets: ["Medical expenses", "Emergency assistance", "Lost luggage", "Any country"], slug: "travel-insurance" },
-      { title: "Health Insurance", desc: "Financial protection from medical service costs.", bullets: ["Outpatient", "Inpatient", "Surgery", "Medications"], slug: "health-insurance" },
-      { title: "Cargo Insurance", desc: "Financial protection from risks during cargo transportation.", bullets: ["Damage", "Loss", "Natural disasters", "International"], slug: "cargo-insurance" },
+      { title: "Cargo Insurance", desc: "Protect your cargo from damage, loss, and other unforeseen risks during transportation.", slug: "cargo-insurance" },
+      { title: "Health Insurance", desc: "Access quality medical services and financial protection from health-related expenses.", slug: "health-insurance" },
+      { title: "Property Insurance", desc: "Protects against financial losses caused by unforeseen events.", slug: "property-insurance" },
+      { title: "Travel Insurance", desc: "Travel with confidence — insurance covers medical expenses abroad and other travel-related risks.", slug: "travel-insurance" },
+      { title: "Auto Insurance", desc: "Protect your vehicle from road accidents, theft, and other unexpected financial losses.", slug: "auto-insurance" },
     ],
     productCtaLabel: "Request Quote",
     partnersTitle: "Leading Insurance Partner Companies",

@@ -52,7 +52,7 @@ export default function ContactForm({ compact = false, showProductSelect = false
           type="text"
           required
           maxLength={100}
-          className="w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full rounded-lg border border-[#e4d8c9] bg-[#f7f5f0] px-3 h-10 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
           aria-label={t.name}
         />
         {errors.name && <p className="text-destructive text-xs mt-1">{errors.name}</p>}
@@ -76,7 +76,7 @@ export default function ContactForm({ compact = false, showProductSelect = false
           <select
             id="cf-product"
             name="product"
-            className="w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full rounded-lg border border-[#e4d8c9] bg-[#f7f5f0] px-3 h-10 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
             aria-label={t.insuranceType}
             defaultValue=""
           >
@@ -95,7 +95,7 @@ export default function ContactForm({ compact = false, showProductSelect = false
             name="message"
             rows={3}
             maxLength={1000}
-            className="w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+            className="w-full rounded-lg border border-[#e4d8c9] bg-[#f7f5f0] px-3 py-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
             aria-label={t.message}
           />
         </div>
@@ -114,7 +114,7 @@ export default function ContactForm({ compact = false, showProductSelect = false
       {errors.consent && <p className="text-destructive text-xs">{errors.consent}</p>}
       <button
         type="submit"
-        className="w-full rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary-dark transition-colors"
+        className="w-full rounded-lg bg-primary px-5 h-11 text-sm font-medium text-primary-foreground hover:bg-primary-dark transition-colors"
       >
         {t.submit}
       </button>
