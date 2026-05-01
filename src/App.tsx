@@ -7,6 +7,9 @@ import { LangProvider } from "@/contexts/LangContext";
 import Index from "./pages/Index";
 import DetailPage from "./pages/DetailPage";
 import ContactPage from "./pages/ContactPage";
+import FaqPage from "./pages/FaqPage";
+import PrivacyPage from "./pages/PrivacyPage";
+import TermsPage from "./pages/TermsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +25,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/detail/:slug" element={<DetailPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/faq" element={<FaqPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

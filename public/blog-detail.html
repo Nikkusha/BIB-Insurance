@@ -33,6 +33,11 @@
             </div>
 
             <div class="article-body" id="article-body"></div>
+
+
+
+            <div class="article-body" id="article-body-extra" style="display:none;"></div>
+
             <div class="article-sources" id="article-sources"></div>
           </article>
 
@@ -51,14 +56,6 @@
       </div>
     </section>
 
-    <!-- Bottom CTA Banner -->
-    <section class="bottom-cta">
-      <div class="container-bib">
-        <p class="bottom-cta-title" id="bottom-cta-text"></p>
-        <button class="btn-outline-white" id="bottom-cta-btn" onclick="openModal()"></button>
-      </div>
-    </section>
-
   </main>
 
   <!-- FOOTER -->
@@ -67,10 +64,16 @@
   <!-- MODAL -->
   <div id="modal-container"></div>
 
+  <style>
+
+  </style>
+
   <!-- Scripts -->
   <script src="/js/data.js"></script>
   <script src="/js/main.js"></script>
   <script>
+
+
     var _params = new URLSearchParams(window.location.search);
     var _slug   = _params.get("slug") || "";
 
@@ -104,6 +107,16 @@
         .split("\n\n")
         .map(function (p) { return "<p>" + p.trim() + "</p>"; })
         .join("");
+
+      /* Always show extra body if it exists, no button */
+      if (post.bodyExtra) {
+        var extraEl = document.getElementById("article-body-extra");
+        extraEl.style.display = "block";
+        extraEl.innerHTML = post.bodyExtra
+          .split("\n\n")
+          .map(function (p) { return "<p>" + p.trim() + "</p>"; })
+          .join("");
+      }
 
       /* Sources */
       var sourcesEl = document.getElementById("article-sources");

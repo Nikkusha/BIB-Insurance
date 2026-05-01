@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* About */}
           <div>
-            <Link to={`/?lang=${lang}`} className="text-[28px] font-bold text-primary-foreground mb-2 inline-block">BIB</Link>
+            <Link to={`/?lang=${lang}`} className="text-sm font-bold text-primary-foreground mb-2 inline-block whitespace-nowrap">BIB | Bene Insurance Brokerage</Link>
             <p className="text-sm text-primary-foreground/70 leading-relaxed max-w-[260px]">{d.footerAbout}</p>
           </div>
 
@@ -29,6 +29,10 @@ export default function Footer() {
                     <a href={`/blog.html?lang=${lang}`} className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                       {link.label}
                     </a>
+                  ) : link.slug === "faq" ? (
+                    <Link to={`/faq?lang=${lang}`} className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                      {link.label}
+                    </Link>
                   ) : (
                     <Link to={navLink(link.slug)} className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                       {link.label}
@@ -76,8 +80,8 @@ export default function Footer() {
       <div className="border-t border-primary-foreground/10">
         <div className="container-bib py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-primary-foreground/50">
           <div className="flex gap-4">
-            <span>{d.footerBottom.privacy}</span>
-            <span>{d.footerBottom.terms}</span>
+            <Link to={`/privacy?lang=${lang}`} className="hover:text-primary-foreground/80 transition-colors">{d.footerBottom.privacy}</Link>
+            <Link to={`/terms?lang=${lang}`} className="hover:text-primary-foreground/80 transition-colors">{d.footerBottom.terms}</Link>
           </div>
           <span>{d.footerBottom.copyright}</span>
         </div>

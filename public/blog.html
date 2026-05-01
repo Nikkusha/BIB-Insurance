@@ -26,17 +26,6 @@
       </div>
     </section>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb-bar">
-      <div class="container-bib">
-        <nav class="breadcrumb" aria-label="breadcrumb">
-          <a href="/?lang=ge" id="bc-home"></a>
-          <span class="breadcrumb-sep">/</span>
-          <span class="breadcrumb-current" id="bc-current"></span>
-        </nav>
-      </div>
-    </div>
-
     <!-- Blog grid -->
     <section class="blog-list-section">
       <div class="container-bib">
@@ -67,12 +56,6 @@
       /* Hero */
       document.getElementById("hero-title").textContent    = d.blogTitle;
       document.getElementById("hero-subtitle").textContent = d.blogSubtitle;
-
-      /* Breadcrumb */
-      var bcHome = document.getElementById("bc-home");
-      bcHome.textContent = d.breadcrumbs.home;
-      bcHome.href = "/?lang=" + lang;
-      document.getElementById("bc-current").textContent = d.breadcrumbs.blog;
 
       /* Blog grid */
       var grid = document.getElementById("blog-grid");

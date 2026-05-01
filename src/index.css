@@ -100,7 +100,7 @@
   100% { transform: translateX(-50%); }
 }
 .animate-scroll-left {
-  animation: scroll-left 30s linear infinite;
+  animation: scroll-left 10s linear infinite;
 }
 
 @keyframes scroll-right {
@@ -108,7 +108,16 @@
   100% { transform: translateX(0); }
 }
 .animate-scroll-right {
-  animation: scroll-right 30s linear infinite;
+  animation: scroll-right 10s linear infinite;
+}
+
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 /* Page fade in */

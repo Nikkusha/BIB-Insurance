@@ -152,7 +152,9 @@
   color: var(--foreground);
 }
 
-.article-body p + p { margin-top: 20px; }
+.article-body p + p { margin-top: 32px; }
+
+#article-body-extra { margin-top: 32px; }
 
 .article-sources {
   margin-top: 40px;
