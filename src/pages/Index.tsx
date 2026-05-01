@@ -233,6 +233,36 @@ export default function Index() {
         <LogoCarousel title={d.partnersTitle} direction="left" />
       </div>
 
+      {/* ===== MIDDLE CTA SECTION ===== */}
+      <section
+        className="relative overflow-hidden flex items-center justify-center py-16 md:py-24"
+        style={{
+          backgroundImage: "url('/cta-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-primary/70 md:bg-primary/60" />
+        <div className="container-bib relative z-10 text-center max-w-4xl px-4 flex flex-col items-center">
+          <p className="text-lg md:text-[22px] text-primary-foreground font-semibold leading-relaxed mb-8 max-w-3xl mx-auto">
+            "{lang === "ge" 
+              ? "მიიღე პროფესიული სადაზღვევო კონსულტაცია და შეადარეთ ბაზარზე არსებული სხვადასხვა სადაზღვევო შეთავაზება." 
+              : "Get professional insurance consultation and compare various insurance offers available in the market."}
+            <br />
+            <br />
+            {lang === "ge"
+              ? "სწორად შერჩეული დაზღვევა მნიშვნელოვანია როგორც ფასის, ისე პირობების მიხედვით\""
+              : "Properly selected insurance is important in terms of both price and conditions\""}
+          </p>
+          <button
+            onClick={() => setModalOpen(true)}
+            className="rounded-lg bg-background text-primary px-6 md:px-8 h-[48px] md:h-[56px] text-sm md:text-base font-bold hover:bg-muted transition-colors shadow-lg"
+          >
+            {lang === "ge" ? "მოითხოვე სადაზღვევო კონსულტაცია" : "Request Insurance Consultation"}
+          </button>
+        </div>
+      </section>
+
       {/* ===== CLIENTS (left to right) ===== */}
       <div className="bg-primary">
         <LogoCarousel title={d.clientsTitle} direction="right" titleClass="text-primary-foreground" variant="clients" />
