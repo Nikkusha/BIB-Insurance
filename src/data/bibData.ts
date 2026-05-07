@@ -311,7 +311,7 @@ const BIB_DATA: Record<Lang, LangData> = {
       },
       mission: {
         title: "მისია",
-        body: "დაზღვევა გავხადოთ მარტივი და გამჭვირვალე\nვახდენთ ბაზარზე არსებული სადაზღვევო შეთავაზებების შედარებას და ვეხმარებით კლიენტებს სწორ არჩევანში.\n\nდავიცვათ კლიენტის ინტერესები\nროგორც დამოუკიდებელი ბროკერი, ვმუშაობთ კლიენტის მხარეს და ვარჩევთ საუკეთესო გადაწყვეტილებას მისი რეალური საჭიროებების მიხედვით.\n\nგავამარტივოთ რთული პროცესები ტექნოლოგიითა და გამოცდილებით\nვაერთიანებთ პროფესიულ ცოდნასა და თანამედროვე ციფრულ პლატფორმას, რათა დაზღვევის პროცესი იყოს სწრაფი, მარტივი და ეფექტური.",
+        body: "<strong style=\"font-size:1.0625rem;font-weight:700;\">დაზღვევა გავხადოთ მარტივი და გამჭვირვალე</strong>\nვახდენთ ბაზარზე არსებული სადაზღვევო შეთავაზებების შედარებას და ვეხმარებით კლიენტებს სწორ არჩევანში.\n\n<strong style=\"font-size:1.0625rem;font-weight:700;\">დავიცვათ კლიენტის ინტერესები</strong>\nროგორც დამოუკიდებელი ბროკერი, ვმუშაობთ კლიენტის მხარეს და ვარჩევთ საუკეთესო გადაწყვეტილებას მისი რეალური საჭიროებების მიხედვით.\n\n<strong style=\"font-size:1.0625rem;font-weight:700;\">გავამარტივოთ რთული პროცესები ტექნოლოგიითა და გამოცდილებით</strong>\nვაერთიანებთ პროფესიულ ცოდნასა და თანამედროვე ციფრულ პლატფორმას, რათა დაზღვევის პროცესი იყოს სწრაფი, მარტივი და ეფექტური.",
       },
       team: {
         title: "გუნდი",
@@ -703,7 +703,7 @@ const BIB_DATA: Record<Lang, LangData> = {
       },
       mission: {
         title: "Our Mission",
-        body: "Making insurance simple and transparent\nWe compare insurance offers across the market and help clients make informed decisions.\n\nTo protect our clients' interests\nAs an independent broker, we work on the client's side to identify the most suitable solutions for their needs.\n\nTo simplify complex processes through expertise and technology\nWe combine professional knowledge with a modern digital platform to deliver fast, clear, and efficient insurance services.",
+        body: "<strong style=\"font-size:1.0625rem;font-weight:700;\">Making insurance simple and transparent</strong>\nWe compare insurance offers across the market and help clients make informed decisions.\n\n<strong style=\"font-size:1.0625rem;font-weight:700;\">To protect our clients' interests</strong>\nAs an independent broker, we work on the client's side to identify the most suitable solutions for their needs.\n\n<strong style=\"font-size:1.0625rem;font-weight:700;\">To simplify complex processes through expertise and technology</strong>\nWe combine professional knowledge with a modern digital platform to deliver fast, clear, and efficient insurance services.",
       },
       team: {
         title: "Team",
