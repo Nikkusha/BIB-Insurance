@@ -94,6 +94,19 @@
   }
 }
 
+/* Page body subheadings */
+.page-body strong {
+  display: block;
+  font-size: 20px !important;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-top: 20px;
+  margin-bottom: -10px;
+}
+.page-body strong:first-child {
+  margin-top: 0;
+}
+
 /* Carousel animation */
 @keyframes scroll-left {
   0% { transform: translateX(0); }

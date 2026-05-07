@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { LangProvider } from "@/contexts/LangContext";
 import Index from "./pages/Index";
 import DetailPage from "./pages/DetailPage";
+import BlogPage from "./pages/BlogPage";
 import ContactPage from "./pages/ContactPage";
 import FaqPage from "./pages/FaqPage";
 import PrivacyPage from "./pages/PrivacyPage";
@@ -24,6 +25,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/detail/:slug" element={<DetailPage />} />
+            <Route path="/blog" element={<BlogPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />

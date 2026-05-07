@@ -136,7 +136,7 @@ export default function DetailPage() {
                       onClick={() => setModalOpen(true)}
                       className="rounded-md bg-primary text-primary-foreground px-6 py-2.5 text-sm font-medium hover:bg-primary/90 transition-colors"
                     >
-                      {lang === "ge" ? "BIB შეთავაზება" : "Get a Quote"}
+                      {lang === "ge" ? "დაგვიკავშირდით" : "Get a Quote"}
                     </button>
                   </div>
                 </div>
@@ -158,7 +158,7 @@ export default function DetailPage() {
             <div className="max-w-2xl">
               {page.body && (
                 <div
-                  className="text-foreground leading-relaxed whitespace-pre-line text-[15px]"
+                  className="page-body text-foreground leading-relaxed whitespace-pre-line text-[15px]"
                   dangerouslySetInnerHTML={{ __html: page.body }}
                 />
               )}

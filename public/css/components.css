@@ -84,6 +84,7 @@
   top: calc(100% + 4px);
   left: 0;
   min-width: 224px;
+  width: auto;
   background: var(--background);
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -102,6 +103,7 @@
   font-size: 14px;
   color: var(--foreground);
   transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
 }
 .dropdown-item:hover {
   background: var(--muted);
@@ -220,12 +222,13 @@
 }
 
 .footer-brand-link {
-  font-size: 28px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--primary-foreground);
   display: inline-block;
   margin-bottom: 8px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
 }
 
 .footer-about {

@@ -103,14 +103,13 @@ function renderHeader(lang) {
           "</div>" +
 
           '<a href="' + blogHref(lang) + '" class="nav-link">' + d.nav.blog + "</a>" +
-          '<a href="/contact?lang=' + lang + '" class="nav-link">' + d.nav.contact + "</a>" +
 
         "</nav>" +
 
         /* Desktop actions */
         '<div class="header-actions">' +
           '<button class="lang-toggle-btn" id="lang-toggle-btn">' + d.nav.langToggle + "</button>" +
-          '<button class="btn-primary" id="header-cta-btn">' + d.nav.cta + "</button>" +
+          '<a href="/contact?lang=' + lang + '" class="btn-primary">' + d.nav.contact + "</a>" +
         "</div>" +
 
         /* Mobile hamburger */
@@ -128,10 +127,9 @@ function renderHeader(lang) {
           '<span class="mobile-section-label">' + d.nav.products + "</span>" +
           productMobile +
           '<a href="' + blogHref(lang) + '" class="mobile-nav-link">' + d.nav.blog + "</a>" +
-          '<a href="/contact?lang=' + lang + '" class="mobile-nav-link">' + d.nav.contact + "</a>" +
           '<div class="mobile-actions">' +
             '<button class="lang-toggle-btn" id="mobile-lang-toggle-btn">' + d.nav.langToggle + "</button>" +
-            '<button class="btn-primary" id="mobile-cta-btn">' + d.nav.cta + "</button>" +
+            '<a href="/contact?lang=' + lang + '" class="btn-primary">' + d.nav.contact + "</a>" +
           "</div>" +
         "</div>" +
       "</div>" +
@@ -227,7 +225,7 @@ function renderFooter(lang) {
 
           /* About */
           '<div>' +
-            '<a href="/?lang=' + lang + '" class="footer-brand-link">BIB</a>' +
+            '<a href="/?lang=' + lang + '" class="footer-brand-link">BIB | Bene Insurance Brokerage</a>' +
             '<p class="footer-about">' + d.footerAbout + "</p>" +
           "</div>" +
 

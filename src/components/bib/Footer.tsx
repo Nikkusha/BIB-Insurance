@@ -61,9 +61,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-sm mb-3 text-primary-foreground">{d.nav.contact}</h4>
             <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-sm text-primary-foreground/70">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                {d.footerContact.address}
+              <li className="flex items-center gap-2 text-sm text-primary-foreground/70 whitespace-nowrap">
+                <MapPin className="h-4 w-4 shrink-0" />
+                <span>{d.footerContact.address}</span>
               </li>
               <li className="flex items-center gap-2 text-sm text-primary-foreground/70">
                 <Phone className="h-4 w-4 shrink-0" />

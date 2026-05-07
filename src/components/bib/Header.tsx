@@ -75,11 +75,8 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
             <DropdownMenu label={d.nav.company} items={d.companyDropdown} id="company" />
             <DropdownMenu label={d.nav.products} items={d.productsDropdown} id="products" />
-            <a href={`/blog.html?lang=${lang}`} className="text-sm font-medium text-primary-foreground hover:text-primary-foreground/70 transition-colors">
+            <Link to={`/blog?lang=${lang}`} className="text-sm font-medium text-primary-foreground hover:text-primary-foreground/70 transition-colors">
               {d.nav.blog}
-            </a>
-            <Link to={`/contact?lang=${lang}`} className="text-sm font-medium text-primary-foreground hover:text-primary-foreground/70 transition-colors">
-              {d.nav.contact}
             </Link>
           </nav>
 
@@ -91,12 +88,12 @@ export default function Header() {
             >
               {d.nav.langToggle}
             </button>
-            <button
-              onClick={() => setModalOpen(true)}
+            <Link
+              to={`/contact?lang=${lang}`}
               className="rounded-md bg-background text-primary px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
             >
-              {d.nav.cta}
-            </button>
+              {d.nav.contact}
+            </Link>
           </div>
 
           {/* Mobile hamburger */}
@@ -125,15 +122,12 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
-              <a href={`/blog.html?lang=${lang}`} onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-primary-foreground hover:text-primary-foreground/70 py-1">
+              <Link to={`/blog?lang=${lang}`} onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-primary-foreground hover:text-primary-foreground/70 py-1">
                 {d.nav.blog}
-              </a>
-              <Link to={`/contact?lang=${lang}`} onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-primary-foreground hover:text-primary-foreground/70 py-1">
-                {d.nav.contact}
               </Link>
               <div className="flex gap-2 pt-2">
                 <button onClick={toggleLang} className="rounded-md border border-primary-foreground/30 px-3 py-1.5 text-xs font-semibold text-primary-foreground">{d.nav.langToggle}</button>
-                <button onClick={() => { setModalOpen(true); setMobileOpen(false); }} className="rounded-md bg-background text-primary px-4 py-2 text-sm font-medium">{d.nav.cta}</button>
+                <Link to={`/contact?lang=${lang}`} onClick={() => setMobileOpen(false)} className="rounded-md bg-background text-primary px-4 py-2 text-sm font-medium">{d.nav.contact}</Link>
               </div>
             </div>
           </div>

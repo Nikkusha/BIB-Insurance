@@ -8,7 +8,7 @@ window.BIB_DATA = {
       products: "პროდუქტები",
       blog: "ბლოგი/სიახლეები",
       contact: "კონტაქტი",
-      cta: "BIB შეთავაზება",
+      cta: "დაგვიკავშირდით",
       langToggle: "EN",
       home: "მთავარი",
     },
@@ -34,7 +34,7 @@ window.BIB_DATA = {
     sidebarRelatedTitle: "სხვა სტატიები",
     sourcesLabel: "წყაროები:",
     bottomCtaText: "მოითხოვეთ სადაზღვევო კონსულტაცია",
-    bottomCtaBtn: "BIB შეთავაზება",
+    bottomCtaBtn: "დაგვიკავშირდით",
     formLabels: {
       name: "სახელი",
       phone: "ტელეფონი",
@@ -56,7 +56,8 @@ window.BIB_DATA = {
       { label: "მისია", slug: "mission" },
       { label: "გუნდი", slug: "team" },
       { label: "რატომ სადაზღვევო ბროკერი", slug: "why-broker" },
-      { label: "ბლოგი", href: "/blog.html" },
+      { label: "ბლოგი / სიახლეები", href: "/blog.html" },
+      { label: "ხშირად დასმული კითხვები", href: "/faq" },
     ],
     footerProducts: [
       { label: "ავტოდაზღვევა", slug: "auto-insurance" },
@@ -64,6 +65,7 @@ window.BIB_DATA = {
       { label: "სამოგზაურო დაზღვევა", slug: "travel-insurance" },
       { label: "ჯანმრთელობის დაზღვევა", slug: "health-insurance" },
       { label: "ტვირთის დაზღვევა", slug: "cargo-insurance" },
+      { label: "დამატებითი დაზღვევა", slug: "additional-insurance" },
     ],
     footerContact: {
       address: "თბილისი, პ. ქავთარაძის ქ. 60",
@@ -213,7 +215,8 @@ window.BIB_DATA = {
       { label: "Mission", slug: "mission" },
       { label: "Team", slug: "team" },
       { label: "Why Broker", slug: "why-broker" },
-      { label: "Blog", href: "/blog.html" },
+      { label: "Blog / News", href: "/blog.html" },
+      { label: "FAQ", href: "/faq" },
     ],
     footerProducts: [
       { label: "Auto Insurance", slug: "auto-insurance" },
@@ -221,6 +224,7 @@ window.BIB_DATA = {
       { label: "Travel Insurance", slug: "travel-insurance" },
       { label: "Health Insurance", slug: "health-insurance" },
       { label: "Cargo Insurance", slug: "cargo-insurance" },
+      { label: "Additional Insurance", slug: "additional-insurance" },
     ],
     footerContact: {
       address: "Tbilisi, P. Kavtaradze St. 60",
@@ -331,7 +335,7 @@ BIB_DATA.ge.serviceLabels = {
   otherServicesTitle: "სხვა სერვისები",
   consentLabel: "ვეთანხმები, რომ ჩემი მონაცემები გამოყენებულ იქნას ჩემთან დასაკავშირებლად",
   bottomCtaText: "მოითხოვეთ სადაზღვევო კონსულტაცია",
-  bottomCtaBtn: "BIB შეთავაზება",
+  bottomCtaBtn: "დაგვიკავშირდით",
 };
 
 BIB_DATA.en.serviceLabels = {

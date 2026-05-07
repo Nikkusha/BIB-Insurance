@@ -7,7 +7,6 @@ const PARTNER_LOGOS = [
   { name: "Irao", src: "/logos/partner-irao.png" },
   { name: "GPI", src: "/logos/partner-gpi.png" },
   { name: "TBC Insurance", src: "/logos/partner-tbc.png" },
-  { name: "Unison", src: "/logos/partner-unison.png" },
 ];
 
 const CLIENT_LOGOS = [
@@ -25,14 +24,15 @@ interface LogoCarouselProps {
   direction?: "left" | "right";
   titleClass?: string;
   variant?: "partners" | "clients";
+  paddingTop?: number;
 }
 
-export default function LogoCarousel({ title, direction = "left", titleClass, variant = "partners" }: LogoCarouselProps) {
+export default function LogoCarousel({ title, direction = "left", titleClass, variant = "partners", paddingTop = 40 }: LogoCarouselProps) {
   const logos = variant === "clients" ? CLIENT_LOGOS : PARTNER_LOGOS;
   const doubled = [...logos, ...logos];
 
   return (
-    <section className="section-padding overflow-hidden">
+    <section className="section-padding overflow-hidden" style={{ paddingTop }}>
       <div className="container-bib mb-8">
         <h2 className={`text-base md:text-[30px] font-bold text-center ${titleClass ?? "text-foreground"}`}>{title}</h2>
       </div>

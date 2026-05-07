@@ -44,7 +44,7 @@ export default function ContactPage() {
       <Header />
 
       {/* Form section */}
-      <section className="py-16 px-4 md:px-8 bg-white">
+      <section className="pt-8 pb-16 px-4 md:px-8 bg-white">
         <div className="mx-auto w-full max-w-[480px]">
           <h2 className="text-xl md:text-[26px] font-semibold text-center text-foreground mb-3">
             {d.ctaSectionTitle}

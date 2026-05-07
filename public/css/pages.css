@@ -71,11 +71,11 @@
 
 /* ── BLOG LIST PAGE ─────────────────────────────────────── */
 .blog-list-section {
-  padding: 56px 0;
+  padding: 16px 0 56px;
 }
 
 @media (min-width: 768px) {
-  .blog-list-section { padding: 72px 0; }
+  .blog-list-section { padding: 24px 0 72px; }
 }
 
 .blog-grid {

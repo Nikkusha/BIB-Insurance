@@ -14,7 +14,9 @@ export default function ContactForm({ compact = false, showProductSelect = false
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const SHEET_URL = "https://script.google.com/macros/s/AKfycbw_uBtVn9ZzNsgZPCatDcX_4yUUS3Mva8zXQCqC_iQKxR56CeMlT6NKjKL7aBfCngPaPw/exec";
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const fd = new FormData(form);
@@ -31,6 +33,34 @@ export default function ContactForm({ compact = false, showProductSelect = false
       setErrors(newErrors);
       return;
     }
+
+    const productLabels: Record<string, string> = {
+      "auto-insurance": "ავტოდაზღვევა",
+      "property-insurance": "ქონების დაზღვევა",
+      "travel-insurance": "სამოგზაურო დაზღვევა",
+      "health-insurance": "ჯანმრთელობის დაზღვევა",
+      "cargo-insurance": "ტვირთის დაზღვევა",
+      "additional-insurance": "დამატებითი დაზღვევა",
+    };
+
+    try {
+      const productSlug = (fd.get("product") as string || "");
+      const productLabel = productLabels[productSlug] || productSlug;
+
+      const url = new URL(SHEET_URL);
+      url.searchParams.append("name", name);
+      url.searchParams.append("phone", phone);
+      url.searchParams.append("product", productLabel);
+      url.searchParams.append("message", (fd.get("message") as string || ""));
+
+      await fetch(url.toString(), {
+        method: "GET",
+        mode: "no-cors",
+      });
+    } catch (_) {
+      // no-cors mode always throws — data is still sent
+    }
+
     setSubmitted(true);
   };
 

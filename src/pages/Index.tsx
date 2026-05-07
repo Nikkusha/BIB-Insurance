@@ -45,7 +45,7 @@ export default function Index() {
         style={{
           backgroundImage: "url('/hero.png')",
           backgroundSize: "cover",
-          backgroundPosition: "bottom",
+          backgroundPosition: "center calc(100% + 60px)",
         }}
       >
         {/* Mobile overlay for readability */}
@@ -230,7 +230,12 @@ export default function Index() {
 
       {/* ===== PARTNERS (right to left) ===== */}
       <div className="bg-background">
-        <LogoCarousel title={d.partnersTitle} direction="left" />
+        <LogoCarousel title={d.partnersTitle} direction="left" paddingTop={80} />
+      </div>
+
+      {/* ===== CLIENTS (left to right) ===== */}
+      <div className="bg-background">
+        <LogoCarousel title={d.clientsTitle} direction="right" variant="clients" />
       </div>
 
       {/* ===== MIDDLE CTA SECTION ===== */}
@@ -245,14 +250,14 @@ export default function Index() {
         <div className="absolute inset-0 bg-primary/70 md:bg-primary/60" />
         <div className="container-bib relative z-10 text-center max-w-4xl px-4 flex flex-col items-center">
           <p className="text-lg md:text-[22px] text-primary-foreground font-semibold leading-relaxed mb-8 max-w-3xl mx-auto">
-            "{lang === "ge" 
-              ? "მიიღე პროფესიული სადაზღვევო კონსულტაცია და შეადარეთ ბაზარზე არსებული სხვადასხვა სადაზღვევო შეთავაზება." 
+            {lang === "ge"
+              ? "მიიღე პროფესიული სადაზღვევო კონსულტაცია და შეადარეთ ბაზარზე არსებული სხვადასხვა სადაზღვევო შეთავაზება."
               : "Get professional insurance consultation and compare various insurance offers available in the market."}
             <br />
             <br />
             {lang === "ge"
-              ? "სწორად შერჩეული დაზღვევა მნიშვნელოვანია როგორც ფასის, ისე პირობების მიხედვით\""
-              : "Properly selected insurance is important in terms of both price and conditions\""}
+              ? "სწორად შერჩეული დაზღვევა მნიშვნელოვანია როგორც ფასის, ისე პირობების მიხედვით"
+              : "Properly selected insurance is important in terms of both price and conditions"}
           </p>
           <button
             onClick={() => setModalOpen(true)}
@@ -262,11 +267,6 @@ export default function Index() {
           </button>
         </div>
       </section>
-
-      {/* ===== CLIENTS (left to right) ===== */}
-      <div className="bg-primary">
-        <LogoCarousel title={d.clientsTitle} direction="right" titleClass="text-primary-foreground" variant="clients" />
-      </div>
 
       <Footer />
 

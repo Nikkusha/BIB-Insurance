@@ -114,7 +114,7 @@ const BIB_DATA: Record<Lang, LangData> = {
       products: "პროდუქტები",
       blog: "ბლოგი/სიახლეები",
       contact: "კონტაქტი",
-      cta: "BIB შეთავაზება",
+      cta: "დაგვიკავშირდით",
       langToggle: "EN",
       home: "მთავარი",
     },
@@ -140,7 +140,7 @@ const BIB_DATA: Record<Lang, LangData> = {
       { title: "გამოცდილება რომელსაც ენდობით", subtitle: "მრავალწლიანი გამოცდილება ქართულ სადაზღვევო ბაზარზე თქვენი კომფორტისთვის." },
       { title: "სწორი არჩევანი — საიმედო დაცვა", subtitle: "BIB გთავაზობთ სრულ სადაზღვევო კონსულტაციას და ზარალის პროცესის მართვას ბოლომდე." },
     ],
-    heroCtaPrimary: "BIB შეთავაზება",
+    heroCtaPrimary: "დაგვიკავშირდით",
     heroCtaSecondary: "გაიგეთ მეტი ↓",
     servicesTitle: "ექსპერტიზა დაზღვევაში, რისკების მართვასა და ზარალის რეგულირებაში",
     servicesSubheading: "",
@@ -307,7 +307,7 @@ const BIB_DATA: Record<Lang, LangData> = {
         title: "ჩვენს შესახებ",
         hero: "BIB | Bene Insurance Brokerage — დამოუკიდებელი სადაზღვევო საბროკერო კომპანია",
         body: "BIB | Bene Insurance Brokerage — დამოუკიდებელი სადაზღვევო საბროკერო კომპანია, დაარსებული 2026 წელს, რომელიც ოპერირებს ძლიერი და ბაზარზე კარგად ცნობილი პარტნიორის — <a href=\"https://benegroup.ge/\" target=\"_blank\" class=\"text-primary hover:underline font-medium\">Bene Group</a> — მხარდაჭერით. ჩვენ არ წარმოვადგენთ არცერთი კონკრეტული სადაზღვევო კომპანიის ინტერესს — ვმუშაობთ მრავალ პარტნიორთან გამჭვირვალე პირობებში.\n\nჩვენი გუნდი აერთიანებს ბიზნეს სფეროში 22-წლიან გამოცდილებას, რაც გვაძლევს ბაზრის სიღრმისეულ ცოდნას და კლიენტებისთვის პრაქტიკულ, სწორ გადაწყვეტილებებზე ორიენტაციას. ვადარებთ ბაზარზე არსებულ შეთავაზებებს, ვხსნით პირობებს და კლიენტს ვთავაზობთ ერთ საკონტაქტო სადაზღვევო მრჩეველს.\n\nზარალის შემთხვევაში ჩვენ ვმართავთ ანაზღაურების პროცესს სრულად — დოკუმენტებიდან საბოლოო შედეგამდე. ჩვენი მიზანია კლიენტებმა მიიღონ პროფესიული, საჭიროებებზე მორგებული მომსახურება.",
-        cta: "BIB შეთავაზება",
+        cta: "დაგვიკავშირდით",
       },
       mission: {
         title: "მისია",
@@ -342,7 +342,7 @@ const BIB_DATA: Record<Lang, LangData> = {
           "დაფარვის ტერიტორია",
           "ავტომობილის ღირებულება და დაზღვევის თანხა",
         ],
-        cta: "BIB შეთავაზება",
+        cta: "დაგვიკავშირდით",
       },
       "property-insurance": {
         title: "ქონების დაზღვევა",
@@ -365,7 +365,7 @@ const BIB_DATA: Record<Lang, LangData> = {
           "ფრანშიზის პირობები",
           "ქონების დაცვის და უსაფრთხოების ზომები",
         ],
-        cta: "BIB შეთავაზება",
+        cta: "დაგვიკავშირდით",
       },
       "travel-insurance": {
         title: "სამოგზაურო დაზღვევა",
@@ -389,7 +389,7 @@ const BIB_DATA: Record<Lang, LangData> = {
           "გამონაკლისები და ფრანშიზის პირობები",
           "მოგზაურობის პერიოდი და ქვეყანა",
         ],
-        cta: "BIB შეთავაზება",
+        cta: "დაგვიკავშირდით",
       },
       "health-insurance": {
         title: "ჯანმრთელობის დაზღვევა",
@@ -413,7 +413,7 @@ const BIB_DATA: Record<Lang, LangData> = {
           "გამონაკლისები და შეზღუდვები",
           "სამედიცინო დაწესებულებების ქსელი",
         ],
-        cta: "BIB შეთავაზება",
+        cta: "დაგვიკავშირდით",
       },
       "cargo-insurance": {
         title: "ტვირთის დაზღვევა",
@@ -437,7 +437,7 @@ const BIB_DATA: Record<Lang, LangData> = {
           "პოლისით დაფარული რისკები და გამონაკლისები",
           "შეფუთვის და ტრანსპორტირების პირობები",
         ],
-        cta: "BIB შეთავაზება",
+        cta: "დაგვიკავშირდით",
       },
       "additional-insurance": {
         title: "დამატებითი დაზღვევები",
@@ -699,7 +699,7 @@ const BIB_DATA: Record<Lang, LangData> = {
         title: "About Us",
         hero: "BIB | Bene Insurance Brokerage — Independent Insurance Brokerage Company",
         body: "BIB | Bene Insurance Brokerage is an independent insurance brokerage company founded in 2026, operating with the support of a strong and well-established market partner — <a href=\"https://benegroup.ge/\" target=\"_blank\" class=\"text-primary hover:underline font-medium\">Bene Group</a>. We do not represent the interests of any single insurance company; instead, we work with multiple partners on transparent terms to identify the most suitable insurance solutions for our clients.\n\nOur team brings together over 22 years of experience in finance and business sectors, providing us with deep market knowledge and a practical, solution-oriented approach for our clients. We simplify the insurance process by comparing offers, clearly explaining policy terms, and providing clients with a single insurance advisor for all their insurance needs.\n\nIn the event of a claim, we manage the entire compensation process — from documentation to the final settlement. Our goal is to ensure that clients receive professional services tailored to their specific needs.",
-        cta: "BIB შეთავაზება",
+        cta: "დაგვიკავშირდით",
       },
       mission: {
         title: "Our Mission",
@@ -719,7 +719,7 @@ const BIB_DATA: Record<Lang, LangData> = {
         covers: ["Damage caused by road accidents", "Vehicle theft", "Fire, explosion, or other accidental events", "Natural disasters such as storms, hail, or flooding"],
         features: ["Comprehensive or partial coverage options", "Third-party liability coverage", "Fast claim assessment and settlement", "Additional services such as towing or roadside assistance"],
         consider: ["Policy terms and exclusions", "Deductible terms", "Coverage territory", "Insured value of the vehicle"],
-        cta: "BIB შეთავაზება",
+        cta: "დაგვიკავშირდით",
       },
       "property-insurance": {
         title: "Property Insurance",
@@ -727,7 +727,7 @@ const BIB_DATA: Record<Lang, LangData> = {
         covers: ["Buildings and structures", "Offices and commercial spaces", "Industrial and warehouse facilities", "Furniture, equipment, and other business assets"],
         features: ["Insurance solutions tailored to your needs", "Broad coverage options for various risks", "Comparison of offers from different insurance companies", "Professional support from policy selection to claim handling"],
         consider: ["Insured value and the actual value of the property", "Covered risks and policy exclusions", "Deductible conditions", "Security and safety measures of the property"],
-        cta: "BIB შეთავაზება",
+        cta: "დაგვიკავშირდით",
       },
       "travel-insurance": {
         title: "Travel Insurance",
@@ -735,7 +735,7 @@ const BIB_DATA: Record<Lang, LangData> = {
         covers: ["Medical expenses abroad", "Emergency medical treatment", "Medical transportation and repatriation", "Loss or damage of luggage", "Trip cancellation or interruption (according to policy terms)"],
         features: ["Coverage for travel to various countries worldwide", "Short-term and long-term travel policies", "Individual and family insurance options", "24/7 international assistance service"],
         consider: ["Coverage territory", "Policy limits and coverage conditions", "Exclusions and deductible terms", "Travel duration and destination country"],
-        cta: "BIB შეთავაზება",
+        cta: "დაგვიკავშირდით",
       },
       "health-insurance": {
         title: "Health Insurance",
@@ -743,7 +743,7 @@ const BIB_DATA: Record<Lang, LangData> = {
         covers: ["Outpatient medical services", "Inpatient hospital treatment", "Doctor consultations and diagnostic tests", "Surgical procedures and medical treatments", "Partial or full coverage of medications (according to policy terms)"],
         features: ["Individual and corporate health insurance plans", "Access to a wide network of medical providers", "Comparison of offers from different insurance companies", "Professional guidance in selecting the right policy"],
         consider: ["Coverage limits of the policy", "Co-payment conditions", "Exclusions and restrictions", "Network of healthcare providers"],
-        cta: "BIB შეთავაზება",
+        cta: "დაგვიკავშირდით",
       },
       "cargo-insurance": {
         title: "Cargo Insurance",
@@ -751,7 +751,7 @@ const BIB_DATA: Record<Lang, LangData> = {
         covers: ["Damage to cargo during transportation", "Loss or destruction of goods", "Losses resulting from transportation accidents", "Damage caused by natural disasters", "Losses during loading and unloading operations"],
         features: ["Coverage for both international and domestic shipments", "Protection for cargo transported by land, sea, or air", "Insurance conditions based on international standards", "Professional support from policy selection to claim handling"],
         consider: ["Type and value of the cargo", "Transportation route and method", "Covered risks and policy exclusions", "Packaging and transportation conditions"],
-        cta: "BIB შეთავაზება",
+        cta: "დაგვიკავშირდით",
       },
       "additional-insurance": {
         title: "Additional Insurance Solutions",
